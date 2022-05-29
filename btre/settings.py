@@ -34,6 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #my apps
     'pages',
+    'listings',
+    'realtors',
 
     #default apps
     'django.contrib.admin',
