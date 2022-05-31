@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Listing
+from django.shortcuts import get_object_or_404, render
+from .models import Listing, Realtor
 from django.core.paginator import PageNotAnInteger, Paginator, EmptyPage
 
 def index (request):
@@ -14,7 +14,12 @@ def index (request):
     return render(request, 'listings/listings.html', context)
 
 def listing (request, listing_id):
-    return render(request, 'listings/listing.html')
+    #get listings item by id
+    listing = get_object_or_404(Listing, pk=listing_id)
+    realtors = Realtor.objects.all().filter(is_mvp=True)
+    #put in dictionary for pass
+    context = {'listing': listing, 'realtors': realtors}
+    return render(request, 'listings/listing.html', context)
 
 def search (request):
     return render(request, 'listings/search.html')
