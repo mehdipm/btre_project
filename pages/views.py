@@ -2,13 +2,17 @@ from urllib import request
 from django.shortcuts import render
 from listings.models import Listing
 from listings.models import Realtor
+from listings.choices import price_choices, bedroom_choices, state_choices
 
 def index (request):
     #get last three items of listings
     listings = \
     Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
     #put data in a dictionary
-    context = {'listings': listings}
+    context = {'listings': listings,
+    'state_choices': state_choices,
+    'bedroom_choices': bedroom_choices,
+    'price_choices': price_choices}
     #and pass it to template
     return render(request, 'pages/index.html', context)
 
