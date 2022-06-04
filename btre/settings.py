@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'listings',
     'realtors',
     'accounts',
+    'contacts',
 
     #default apps
     'django.contrib.admin',
