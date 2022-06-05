@@ -155,3 +155,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'mehdip.m909@gmail.com'
 EMAIL_HOST_PASSWORD = 'oIw404S$XvJ7'
 EMAIL_USE_TLS = True
+
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
