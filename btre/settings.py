@@ -154,8 +154,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'mehdip.m909@gmail.com'
 EMAIL_HOST_PASSWORD = 'oIw404S$XvJ7'
-<<<<<<< HEAD
-EMAIL_USE_TLS = True
-=======
-EMAIL_USE_TLS = True
->>>>>>> parent of a7afedd (heroku req)
+
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
