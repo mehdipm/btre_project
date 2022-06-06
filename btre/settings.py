@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'contacts',
 
     #default apps
-    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
